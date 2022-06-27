@@ -23,30 +23,43 @@ namespace ArrayTask3
 
             Console.WriteLine("\n");
 
-            if (arraySize >= 2)
+            if (arraySize == 0)
+            {
+                Console.WriteLine($"Нулевой размер массива");
+            }
+            else if (arraySize == 1)
+            {
+                Console.WriteLine($"Число {array[0]} индекс массива {0} является локальным максимумом");
+            } 
+            else if (arraySize == 2)
+            {
+                if (array[0] > array[1])
+                {
+                    Console.WriteLine($"Число {array[0]} индекс массива {0} является локальным максимумом");
+                } 
+                else
+                {
+                    Console.WriteLine($"Число {array[1]} индекс массива {1} является локальным максимумом");
+                }
+            }
+            else if (arraySize > 2)
             {
                 if (array[0] > array[1])
                 {
                     Console.WriteLine($"Число {array[0]} индекс массива {0} является локальным максимумом");
                 }
+
                 if (array[arraySize - 1] > array[arraySize - 2])
                 {
                     Console.WriteLine($"Число {array[arraySize - 1]} индекс массива {arraySize - 1} является локальным максимумом");
                 }
-            } 
-            else
-            {
-                if (arraySize > 0)
-                {
-                    Console.WriteLine($"Число {array[0]} индекс массива {0} является локальным максимумом");
-                }
-            }
 
-            for (int i = 1; i < arraySize-1; i++)
-            {
-                if (array[i] > array[i - 1] && array[i] > array[i + 1])
+                for (int i = 1; i < arraySize - 1; i++)
                 {
-                    Console.WriteLine($"Число {array[i]} индекс массива {i} является локальным максимумом");
+                    if (array[i] > array[i - 1] && array[i] > array[i + 1])
+                    {
+                        Console.WriteLine($"Число {array[i]} индекс массива {i} является локальным максимумом");
+                    }
                 }
             }
         }
