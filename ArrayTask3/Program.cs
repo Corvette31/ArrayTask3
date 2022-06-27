@@ -33,20 +33,20 @@ namespace ArrayTask3
                 {
                     Console.WriteLine($"Число {array[arraySize - 1]} индекс массива {arraySize - 1} является локальным максимумом");
                 }
+            } 
+            else
+            {
+                if (arraySize > 0)
+                {
+                    Console.WriteLine($"Число {array[0]} индекс массива {0} является локальным максимумом");
+                }
             }
 
-            for (int i = 0; i < arraySize; i++)
+            for (int i = 1; i < arraySize-1; i++)
             {
-                if (i == 0 && i + 1 > arraySize - 1)
+                if (array[i] > array[i - 1] && array[i] > array[i + 1])
                 {
                     Console.WriteLine($"Число {array[i]} индекс массива {i} является локальным максимумом");
-                }
-                else if (i > 0 && i < arraySize - 1)
-                {
-                    if (array[i] > array[i - 1] && array[i] > array[i + 1])
-                    {
-                        Console.WriteLine($"Число {array[i]} индекс массива {i} является локальным максимумом");
-                    }
                 }
             }
         }
